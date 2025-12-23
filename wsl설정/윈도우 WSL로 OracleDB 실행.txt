@@ -36,6 +36,7 @@ docker --version
 docker-compose -p db -f oracledb.yaml up -d 
 5) DB 컨테이너 실행 확인 및 접속
 docker ps 
-docker exec -it oracle18c bash
+docker exec -it oracle21c bash
 6) 이후 과정은 오라클 설치 완료 모니터링 및 SQLDeveloper 실행 후 예제 데이터 생성하는 과정이므로 교안의 설치과정 참조 
+
 
