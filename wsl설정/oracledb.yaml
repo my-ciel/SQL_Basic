@@ -2,7 +2,7 @@ services:
   oracle18c:
     image: cielciel/oracle18c:1.0
     restart: always
-    container_name: oracle21c
+    container_name: oracle18c
     ports:
       - "1521:1521"
       - "5500:5500"
@@ -12,3 +12,4 @@ services:
       ORACLE_PASSWORD: oracle
       TZ: Asia/Seoul
     privileged: true
+
