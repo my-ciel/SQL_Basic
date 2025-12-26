@@ -167,6 +167,32 @@ WHERE  dept_total >
          FROM avg_cost)
 ORDER BY department_name;
 
+--WITH 추가 예제
+WITH
+-- 첫 번째 블록: 부서별 인원수 집계
+Dept_Counts AS (
+    SELECT department_id, COUNT(*) AS emp_count
+    FROM employees
+    WHERE department_id IS NOT NULL
+    GROUP BY department_id
+),
+-- 두 번째 블록: 첫 번째 블록을 참조하여 두 명이상의 부서 필터링 
+Dept_2More AS (
+    SELECT department_id
+    FROM Dept_Counts
+    WHERE emp_count <> 1
+)
+-- 메인 쿼리: 두 번째 블록에 속한 부서의 사원 상세 정보 출력
+SELECT 
+    e.first_name, 
+    e.last_name, 
+    e.job_id, 
+    e.department_id
+FROM employees e
+WHERE e.department_id IN (SELECT department_id FROM Dept_2More)
+ORDER BY e.department_id;
+
+
 
 
 
