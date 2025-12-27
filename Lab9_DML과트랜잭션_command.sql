@@ -12,7 +12,7 @@ INSERT INTO	departments
 VALUES (100, 'Finance', NULL, NULL);
 
 INSERT INTO employees 
-VALUES(113, ＇승현', ＇최', 'SHCHOI', '515.124.4567', SYSDATE,       
+VALUES(113, '승현', '최', 'SHCHOI', '515.124.4567', SYSDATE,       
        'AC_ACCOUNT', 6900, NULL, 205, 10);
 
 INSERT INTO employees
@@ -81,6 +81,7 @@ COMMIT;
 --자신의 정보로 변경하여 공용데이터베이스에서 실행
 INSERT INTO std
 VALUES('1234567','홍길동','01012345678','gdhong@gmail.com', '99/01/01', sysdate, 100);
+
 
 
 
